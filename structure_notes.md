@@ -6,10 +6,13 @@ Main overview
  - 1 slot x1 for power
  - 7 slot x1 for modules
  
-Pcie x1 - 36 pin, pcie x4 - 64 pin
+PCIe x1 - 36 pin, PCIe x4 - 64 pin, PCIe x8 - 98 pins
 
 Plasment is [P|C|1|2|3|4|5|6|7]
- - P (Power) - power supply unit: provide 5 and 3.3 volts
+ - P (Power) - power supply unit is DC-DC: provide
+   - VCC (pass through)
+   - 5V
+   - 3.3
  - C (Controller) - main unit with high performace mcu and master unit of everthing communication
  - 1..7 - slave modules of io and drivers
 
