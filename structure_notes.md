@@ -59,7 +59,8 @@ Pcie slot:
  - 1 pin interrupt
  - 1 gpio (2 pin)
  - 4-6 pin power (5 and 3.3 volts + GND)
- - 12 other pins (not used now)
+ - 8 pin of external power (12 - 24 volts + GND)
+ - 2 other pins (not used now)
 
 Board:
  - stm32f4(11,12,14,15) (64, 100 pins) / another logic or special chips
