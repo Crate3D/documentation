@@ -3,12 +3,12 @@ Main overview
 
 9 slot of pcie:
  - 1 slot x4 for controller
- - 1 slot x1 for power
- - 7 slot x1 for modules
+ - 1 slot x4 for power
+ - 7 slot x4 for modules
  
 PCIe x1 - 36 pin, PCIe x4 - 64 pin, PCIe x8 - 98 pins
 
-Plasment is [P|C|1|2|3|4|5|6|7]
+Plasment is [P|1|2|3|4|5|6|7|C]
  - P (Power) - power supply unit is DC-DC: provide
    - VCC (pass through)
    - 5V
@@ -24,12 +24,13 @@ Pcie slot:
  - 2 i2c (2 pin)
  - 2 uart (2 pin)
  - 1 can (2 pin)
- - 7 pin cs (per module)
+ - 8 pin cs (per module)
  - 7 pin reset (per module)
  - 7 pin interrupt (per module)
  - 7 gpio (2 pin) (per module)
  - 4-6 pin power (5 and 3.3 volts + GND)
- - 5 other pins (not used now)
+ - 1 pin Power Good feedback signal
+ - 3 analog pin (VCC, 5 and 3.3 volts value)
 
 Panel:
   - 2 uart
@@ -61,9 +62,9 @@ Pcie slot:
  - 1 pin reset
  - 1 pin interrupt
  - 1 gpio (2 pin)
- - 4-5 pin power (5 and 3.3 volts + GND)
- - 8 pin of external power (12 - 24 volts + GND)
+ - 6 pin digital power (5 and 3.3 volts + GND)
  - 3 pin module address (unique for everything slot)
+ - 40 pin main power (12 - 24 volts + GND)
 
 Board:
  - stm32f4(11,12,14,15) (64, 100 pins) / another logic or special chips
@@ -77,11 +78,13 @@ Power
 =====
 
 Pcie slot:
- - 9 pin GND
- - 9 pin VCC (12 - 24 volts) (pass through)
- - 9 pin 5 volts
- - 8 pin 3.3 volts
+ - 40 pin of main power (12 - 24 volts + GND)
+ - 10 pin digital power (5 and 3.3 volts + GND)
  - 1 pin Power Good feedback signal
+ - 1 spi (4 pin)
+ - 1 i2c (2 pin)
+ - 3 analog pin (VCC, 5 and 3.3 volts value)
+ - 5 other pins (not used now)
 
 Board:
  - highspeed flyback DC-DC convertors for 5 and 3.3 volts
