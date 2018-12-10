@@ -61,9 +61,9 @@ Pcie slot:
  - 1 pin reset
  - 1 pin interrupt
  - 1 gpio (2 pin)
- - 4-6 pin power (5 and 3.3 volts + GND)
+ - 4-5 pin power (5 and 3.3 volts + GND)
  - 8 pin of external power (12 - 24 volts + GND)
- - 2 other pins (not used now)
+ - 3 pin module address (unique for everything slot)
 
 Board:
  - stm32f4(11,12,14,15) (64, 100 pins) / another logic or special chips
@@ -72,3 +72,20 @@ Board:
 
 Panel:
  - another extrenal interface (module specific)
+ 
+Power
+=====
+
+Pcie slot:
+ - 9 pin GND
+ - 9 pin VCC (12 - 24 volts) (pass through)
+ - 9 pin 5 volts
+ - 8 pin 3.3 volts
+ - 1 pin Power Good feedback signal
+
+Board:
+ - highspeed flyback DC-DC convertors for 5 and 3.3 volts
+ - overcurrent and overload protection
+
+Panel:
+ - High current pins for VCC connection.
